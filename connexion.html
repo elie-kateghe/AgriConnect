@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - AgriConnect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-container {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--light-gray);
+        }
+        
+        .auth-illustration {
+            flex: 1;
+            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(27, 94, 32, 0.9)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            display: none;
+        }
+        
+        .auth-illustration h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .auth-illustration p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 500px;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+        }
+        
+        .auth-form-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+        
+        .auth-form {
+            background: white;
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .auth-form h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+            outline: none;
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .auth-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-login {
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .divider::before {
+            margin-right: 10px;
+        }
+        
+        .divider::after {
+            margin-left: 10px;
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: white;
+            color: #555;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .social-btn:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .remember-me input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .forgot-password {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        @media (min-width: 992px) {
+            .auth-illustration {
+                display: flex;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .auth-container {
+                flex-direction: column;
+            }
+            
+            .auth-illustration {
+                padding: 40px 20px;
+                text-align: center;
+            }
+            
+            .auth-illustration p {
+                max-width: 100%;
+            }
+            
+            .auth-form {
+                padding: 30px 20px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-illustration">
+            <h2>Bienvenue sur AgriConnect</h2>
+            <p>Rejoignez notre communauté d'agriculteurs et d'acheteurs engagés dans une agriculture locale et durable.</p>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i> Accédez à des produits frais de qualité
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i> Vendez vos produits directement aux consommateurs
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i> Suivez vos commandes en temps réel
+                </div>
+            </div>
+        </div>
+        
+        <div class="auth-form-container">
+            <form class="auth-form" id="loginForm">
+                <h1>Connexion</h1>
+                
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="email" class="form-control" placeholder="votre@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                </div>
+                
+                <div class="remember-forgot">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember"> Se souvenir de moi
+                    </label>
+                    <a href="mot-de-passe-oublie.html" class="forgot-password">Mot de passe oublié ?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                
+                <div class="auth-footer">
+                    <p>Vous n'avez pas de compte ? <a href="inscription.html">S'inscrire</a></p>
+                </div>
+                
+                <div class="social-login">
+                    <div class="divider">Ou connectez-vous avec</div>
+                    
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn" title="Se connecter avec Google">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button type="button" class="social-btn" title="Se connecter avec Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button type="button" class="social-btn" title="Se connecter avec Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+            
+            // Basic validation
+            if (!email || !password) {
+                alert('Veuillez remplir tous les champs');
+                return;
+            }
+            
+            // In a real app, you would send this to your authentication API
+            console.log('Login attempt with:', { email, remember });
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Redirect to dashboard on success
+                window.location.href = 'tableau-de-bord.html';
+            }, 1000);
+        });
+        
+        // Social login handlers
+        document.querySelectorAll('.social-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const provider = this.querySelector('i').className.split('-').pop();
+                console.log(`Logging in with ${provider}`);
+                // In a real app, this would trigger OAuth flow
+                alert(`Fonctionnalité de connexion avec ${provider} à implémenter`);
+            });
+        });
+    </script>
+</body>
+</html>

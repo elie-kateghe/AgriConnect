@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect - Plateforme Agricole</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">AgriConnect</a>
+            <div class="nav-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#produits">Produits</a>
+                <a href="#producteurs">Producteurs</a>
+                <a href="#actualites">Actualités</a>
+                <a href="#contact">Contact</a>
+                <div class="auth-buttons">
+                    <a href="connexion.html" class="btn btn-outline">Connexion</a>
+                    <a href="inscription.html" class="btn btn-primary">Inscription</a>
+                </div>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Connectez-vous à l'Agriculture Locale</h1>
+                <p>Découvrez des produits frais directement des producteurs de votre région</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Rechercher des produits...">
+                    <select>
+                        <option value="">Toutes les catégories</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="legumes">Légumes</option>
+                        <option value="viandes">Viandes</option>
+                        <option value="produits-laitiers">Produits Laitiers</option>
+                    </select>
+                    <button class="btn btn-primary">Rechercher</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi choisir AgriConnect ?</h2>
+                <p>Une plateforme complète pour tous les acteurs du secteur agricole</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-tractor"></i>
+                    <h3>Pour les Producteurs</h3>
+                    <p>Vendez vos produits directement aux consommateurs et augmentez vos revenus</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shopping-basket"></i>
+                    <h3>Pour les Acheteurs</h3>
+                    <p>Accédez à des produits frais et locaux directement des producteurs</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Pour les Transporteurs</h3>
+                    <p>Trouvez des opportunités de livraison et développez votre activité</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="produits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Produits Populaires</h2>
+                <a href="produits.html" class="btn btn-link">Voir tout <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="products-grid" id="products-container">
+                <!-- Products will be loaded dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Farmers Section -->
+    <section class="farmers" id="producteurs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Producteurs</h2>
+                <p>Découvrez les producteurs locaux près de chez vous</p>
+            </div>
+            <div class="farmers-grid" id="farmers-container">
+                <!-- Farmers will be loaded dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news" id="actualites">
+        <div class="container">
+            <div class="section-header">
+                <h2>Actualités Agricoles</h2>
+                <a href="actualites.html" class="btn btn-link">Voir tout <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Actualité 1">
+                    <div class="news-content">
+                        <span class="news-date">15 Nov 2023</span>
+                        <h3>Les tendances de l'agriculture biologique en 2023</h3>
+                        <p>Découvrez comment l'agriculture biologique évolue cette année et quelles sont les nouvelles pratiques à adopter.</p>
+                        <a href="#" class="btn btn-text">Lire la suite</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Actualité 2">
+                    <div class="news-content">
+                        <span class="news-date">10 Nov 2023</span>
+                        <h3>Ateliers de formation pour les jeunes agriculteurs</h3>
+                        <p>Des sessions de formation gratuites pour les jeunes souhaitant se lancer dans l'agriculture durable.</p>
+                        <a href="#" class="btn btn-text">Lire la suite</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Restez informé</h2>
+                <p>Abonnez-vous à notre newsletter pour recevoir les dernières actualités et offres spéciales</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">S'abonner</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>AgriConnect</h3>
+                    <p>La plateforme de référence pour connecter les acteurs du secteur agricole local.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#producteurs">Producteurs</a></li>
+                        <li><a href="#actualites">Actualités</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact" id="contact">
+                    <h4>Contactez-nous</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Rue de l'Agriculture, 75000 Paris</p>
+                    <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                    <p><i class="fas fa-envelope"></i> contact@agriconnect.fr</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AgriConnect. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
